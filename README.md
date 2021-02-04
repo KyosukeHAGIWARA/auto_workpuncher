@@ -8,7 +8,10 @@ RESTAPIなどは生えてるわけもないので、コマンドラインからS
 ## Usage
 
 出勤or退勤
-`python ./main.py [work_in|work_out]`
+
+```python
+python ./main.py [work_in|work_out]
+```
 
 タイムカードのURLとログイン情報を別途`credentials.json`として設定する
 
