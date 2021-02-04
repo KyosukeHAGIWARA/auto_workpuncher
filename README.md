@@ -10,6 +10,8 @@ RESTAPIなどは生えてるわけもないので、コマンドラインからS
 出勤or退勤
 `python ./main.py [work_in|work_out]`
 
+タイムカードのURLとログイン情報を別途`credentials.json`として設定する
+
 ## Future Update
 
 + メールで出勤退勤をお知らせしているので、IMAP鯖とか立ててメール受信をトリガーにこれを走らせるようにしたい
