@@ -1,3 +1,4 @@
+import sys
 import time, datetime
 import json
 from selenium import webdriver
@@ -71,8 +72,9 @@ if __name__ == "__main__":
 
     login(creds)
     time.sleep(3)
+ 
+    # コマンドライン引数を受け取って打刻する
+    punch(sys.argv[1])
 
-    punch('work_in')
-    punch('work_out')
 
     driver.quit()
