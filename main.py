@@ -74,7 +74,14 @@ if __name__ == "__main__":
     time.sleep(3)
  
     # コマンドライン引数を受け取って打刻する
-    punch(sys.argv[1])
-
+    try:
+        punch(sys.argv[1])
+    except IndexError:
+        # 引数書いてもらえなかったときは15時を分岐点に判断する
+        if datetime.datetime.fromtimestamp(time.time()).strftime('%H:%M') < '15:00':
+            punch('work_in')
+        else:
+            punch('work_out')
+    
 
     driver.quit()
