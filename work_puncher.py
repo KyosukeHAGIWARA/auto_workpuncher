@@ -113,11 +113,12 @@ if __name__ == '__main__':
         creds = json.load(f)
     print(creds)
 
-    work_puncher = WorkPuncher('./chromedriver.exe', False)
+    work_puncher = WorkPuncher('./chromedriver.exe', True)
 
     # ヘッドレスモード切り替えのテスト
-    work_puncher.set_headless_mode(True)
+    # work_puncher.set_headless_mode(True)
 
+    # ログインする
     work_puncher.login(
         url=creds['url']
         , contract_code=creds['contract_code']
