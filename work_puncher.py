@@ -91,7 +91,7 @@ class WorkPuncher:
             type_elm = '/html/body/form/table/tbody/tr[2]/td/div/div/div/table/tbody/tr[1]/td/table/tbody/tr/td[2]/div/div/div/table/tbody/tr[1]/td/div/div/table/tbody/tr[2]/td[3]/div/div/table/tbody/tr/td'
         else:
             print('{} : Error : plz set work_in or work_out'.format(datetime.datetime.fromtimestamp(time.time()).strftime('%Y/%m/%d %H:%M:%S')))
-            return -1
+            return '{} : Error : plz set work_in or work_out'.format(datetime.datetime.fromtimestamp(time.time()).strftime('%Y/%m/%d %H:%M:%S'))
         
         self.driver.find_element_by_xpath(type_elm).click()
 
@@ -101,11 +101,13 @@ class WorkPuncher:
         
         time.sleep(3)
 
-        print('{} : {} done.'.format(datetime.datetime.fromtimestamp(time.time()).strftime('%Y/%m/%d %H:%M:%S'), punch_type))
         # 以下実行すると打刻される
         # ok_btn = self.driver.find_element_by_xpath(
         #     '/html/body/form/table/tbody/tr[2]/td/div/div/div/table/tbody/tr[6]/td/div/div/table/tbody/tr/td[1]/div/div/input')
         # ok_btn.click()
+        print('{} : {} done.'.format(datetime.datetime.fromtimestamp(time.time()).strftime('%Y/%m/%d %H:%M:%S'), punch_type))
+        return '{} : {} done.'.format(datetime.datetime.fromtimestamp(time.time()).strftime('%Y/%m/%d %H:%M:%S'), punch_type)
+
 
 
 if __name__ == '__main__':
