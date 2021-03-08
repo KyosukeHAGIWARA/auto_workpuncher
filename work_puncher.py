@@ -41,6 +41,7 @@ class WorkPuncher:
         self.is_headless = is_headless
 
         # ヘッドレスモードが変わったらdriver立ち上げなおし
+        self.driver.quit()
         self.driver = self._generate_driver()
     
     def login(self, url, contract_code, id_code, password):
@@ -113,6 +114,9 @@ if __name__ == '__main__':
     print(creds)
 
     work_puncher = WorkPuncher('./chromedriver.exe', False)
+
+    # ヘッドレスモード切り替えのテスト
+    work_puncher.set_headless_mode(True)
 
     work_puncher.login(
         url=creds['url']
