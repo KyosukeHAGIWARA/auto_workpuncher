@@ -6,7 +6,7 @@ from selenium import webdriver
 DRIVER_PATH = './chromedriver'
 
 # ヘッドレスモード
-is_headless = False
+is_headless = True
 
 if is_headless:
     options = webdriver.ChromeOptions()
@@ -61,7 +61,7 @@ def punch(punch_type):
     time.sleep(3)
 
     print('{} : {} done.'.format(datetime.datetime.fromtimestamp(time.time()).strftime('%Y/%m/%d %H:%M:%S'), punch_type))
-    # 以下実行すると打刻される  
+    # 以下実行すると打刻される
     # ok_btn = driver.find_element_by_xpath(
     #     '/html/body/form/table/tbody/tr[2]/td/div/div/div/table/tbody/tr[6]/td/div/div/table/tbody/tr/td[1]/div/div/input')
     # ok_btn.click()
